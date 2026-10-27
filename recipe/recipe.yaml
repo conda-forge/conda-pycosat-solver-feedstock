@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.1.0"
+  version: "26.10.0"
 
 package:
   name: conda-pycosat-solver
@@ -12,7 +12,7 @@ source:
   # rather than GitHub's own auto-generated (and historically not
   # format-stable) archive link
   url: https://github.com/conda/conda-pycosat-solver/releases/download/${{ version }}/conda-pycosat-solver-${{ version }}.tar.gz
-  sha256: ac103446d6f374a54f1427bdc364fc0755350242a8f3a106e7e879d2a463c8ec
+  sha256: 152aeb97ace0c1e88a41fa7115de729d6b335efb6b3afdfe9a0c524b85b5f78a
   target_directory: src/
 
 build:
@@ -30,7 +30,6 @@ requirements:
     - hatchling >=1.12.2
     - hatch-vcs >=0.2.0
   run:
-    - boltons >=23.0.0
     - frozendict >=2.4.2
     - packaging >=26.3
     - pycosat >=0.6.3
@@ -40,7 +39,7 @@ requirements:
     # Technically a run dependency (imported at runtime), but conda already
     # bundles conda-pycosat-solver by default, so a hard `run` dependency
     # here would create a dependency cycle that complicates migrations.
-    - conda >=23.7.3
+    - conda >=26.5
 
 tests:
   # rattler-build doesn't support `requirements` in `python` block,
